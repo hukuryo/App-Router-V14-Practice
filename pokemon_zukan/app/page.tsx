@@ -1,6 +1,5 @@
 import React from "react";
 import { Spinner } from "./components/spinner";
-import Link from "next/link";
 
 export default function Home() {
   return (

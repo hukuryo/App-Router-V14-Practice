@@ -1,15 +1,23 @@
 import React from "react";
-import axios from "axios";
 
-export const pokemonList = () => {
-  //   const fetchNewsLists = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://pokeapi.co/api/v2/pokemon/ditto"
-  //       );
-  //       console.log(response);
-  //     } catch (error) {}
-  //   };
-  //   fetchNewsLists();
-  return <div>pokemonList</div>;
+type placeholder = {
+  id: number;
+  title: string;
+};
+
+async function getItem() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  return res.json();
+}
+export const PokemonList = async () => {
+  const items = await getItem();
+  return (
+    <div>
+      <ul>
+        {items.map((item: placeholder) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
