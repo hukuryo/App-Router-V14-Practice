@@ -1,3 +1,4 @@
+import { resolve } from "path";
 import React from "react";
 
 type placeholder = {
@@ -6,9 +7,13 @@ type placeholder = {
 };
 
 async function getItem() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    cache: "no-store",
+  });
   return res.json();
 }
+
 export const PokemonList = async () => {
   const items = await getItem();
   return (
