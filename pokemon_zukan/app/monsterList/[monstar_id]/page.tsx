@@ -21,11 +21,6 @@ export default function MonsterDetailPage() {
         </div>
         <h1 className="text-3xl font-bold mb-4">{monsterData.name}</h1>
         <p className="text-gray-600 mb-6">{monsterData.description}</p>
-
-        {/* 他のモンスターの詳細情報を表示 */}
-        {/* 例: タイプ、高さ、重さなど */}
-
-        {/* ボタンやリンクを追加して他のアクションを実行する場合 */}
         <div className="flex justify-center">
           <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">
             他のページへ

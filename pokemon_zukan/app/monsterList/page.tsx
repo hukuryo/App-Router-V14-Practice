@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { PokemonList } from "../components/pokemonList";
 
 const MonsterList = () => {
