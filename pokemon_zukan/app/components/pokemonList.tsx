@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { resolve } from "path";
 import React from "react";
 
@@ -20,7 +21,9 @@ export const PokemonList = async () => {
     <div>
       <ul>
         {items.map((item: placeholder) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            <Link href={`monsterList/${item.id}`}>{item.title}</Link>
+          </li>
         ))}
       </ul>
     </div>
