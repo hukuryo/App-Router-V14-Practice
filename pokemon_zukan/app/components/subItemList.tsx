@@ -11,7 +11,6 @@ async function fetchItem() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
   });
-  console.log(res)
   return await res.json();
 }
 

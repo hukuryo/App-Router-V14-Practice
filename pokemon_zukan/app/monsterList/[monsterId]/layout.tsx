@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'モンスターリスト',
-  description: 'モンスターの一覧です。',
+  title: 'モンスター詳細ページ',
+  description: 'モンスターの詳細ページです。',
 }
 
 export default function RootLayout({
