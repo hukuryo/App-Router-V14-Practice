@@ -15,7 +15,7 @@ type pageProps = {
 };
 
 async function fetchItemDetail(id: number) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts${id}`, {
     cache: "no-store",
   });
   const monsterDetail: pageProps = await res.json();
@@ -24,7 +24,10 @@ async function fetchItemDetail(id: number) {
 
 export default async function page({ params }: detailType) {
   const monster = await fetchItemDetail(params.monsterId)
-  if(!monster) return notFound()
+  if(!monster){
+    console.log('des')
+    return notFound() 
+  }
   return (
     <div className="container mx-auto my-8">
       <div className="bg-white p-8 rounded-lg shadow-md">

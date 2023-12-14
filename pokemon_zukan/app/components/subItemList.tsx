@@ -7,14 +7,15 @@ type monstarType = {
 };
 
 async function fetchItem() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 6000));
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
   });
+  console.log(res)
   return await res.json();
 }
 
-export const PokemonList = async () => {
+export const SubItemList = async () => {
   const items = await fetchItem();
 
   return (
